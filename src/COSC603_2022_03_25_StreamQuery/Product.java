@@ -1,6 +1,5 @@
-package COSC603_2022_03_23_Stearm;
+package COSC603_2022_03_25_StreamQuery;
 //03- Class
-import java.util.Date;
 import java.util.Set;
 
 public class Product {

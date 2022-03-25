@@ -1,4 +1,4 @@
-package COSC603_2022_03_23_Stearm;
+package COSC603_2022_03_25_StreamQuery;
 //01- Class
 public class Customer {
     private int id;

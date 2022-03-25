@@ -1,4 +1,4 @@
-package COSC603_2022_03_23_Stearm;
+package COSC603_2022_03_25_StreamQuery;
 //05- Class
 
 import java.time.LocalDate;
@@ -90,10 +90,12 @@ public class StreamsMean {
                 .stream()
                 .filter(o ->o.getCostomer().getTier()==2)
                 .filter(o ->o.getOrderDate().compareTo(LocalDate.of(2021,2,1)) >=0 )
-                .map(  p ->p.withPrice(   p.getPrice() * 0.9))
+                .filter(o ->o.getOrderDate().compareTo(LocalDate.of(2021,4,1)) <=0 )
+                .flatMap(o-> o.getProducts().stream())
+                .distinct()
                 .collect(Collectors.toList());
 
-        for(Order o: baby)
+        for(Product o: ordered)
             System.out.println(o.getId() );
 
 

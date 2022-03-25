@@ -1,7 +1,6 @@
-package COSC603_2022_03_23_Stearm;
+package COSC603_2022_03_25_StreamQuery;
 //02- Class
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.Set;
 
 public class Order {

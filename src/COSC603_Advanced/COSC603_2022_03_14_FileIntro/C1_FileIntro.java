@@ -1,4 +1,4 @@
-package COSC603_2022_03_14_FileIntro;
+package COSC603_Advanced.COSC603_2022_03_14_FileIntro;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -11,7 +11,7 @@ public class C1_FileIntro {
     public static void main(String[] args) throws IOException {
 
         ///////////////////////////////// FILE
-        File myFile= new File("src/COSC603_2022_03_14_FileIntro/myFile.txt");
+        File myFile= new File("src/COSC603_Advanced.COSC603_2022_03_14_FileIntro/myFile.txt");
 
         try{
 

@@ -1,4 +1,4 @@
-package COSC603_2022_03_16_IO;
+package COSC603_Advanced.COSC603_2022_03_16_IO;
 import java.io.*;
 //Listing 17.4 Copy.java
 public class C4_FileCopy {

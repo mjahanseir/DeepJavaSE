@@ -1,4 +1,4 @@
-package COSC603_2022_03_25_StreamQuery;
+package COSC603_Advanced.COSC603_2022_03_25_StreamQuery;
 //05- Class
 
 import java.time.LocalDate;

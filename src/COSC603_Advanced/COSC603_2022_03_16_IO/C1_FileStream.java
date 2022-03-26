@@ -1,4 +1,4 @@
-package COSC603_2022_03_16_IO;
+package COSC603_Advanced.COSC603_2022_03_16_IO;
 
 
 import java.io.File;
@@ -9,7 +9,7 @@ import java.io.IOException;
 public class C1_FileStream {
     public static void main(String[] args) throws IOException {
 
-        File file = new File("src/COSC603_2022_03_16_IO/temp.dat");
+        File file = new File("src/COSC603_Advanced.COSC603_2022_03_16_IO/temp.dat");
 
         try(FileInputStream input = new FileInputStream(file)){  //  TRY WITH RESOURCES   // Create an output stream to the file
 

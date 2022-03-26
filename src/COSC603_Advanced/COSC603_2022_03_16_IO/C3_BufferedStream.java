@@ -1,11 +1,11 @@
-package COSC603_2022_03_16_IO;
+package COSC603_Advanced.COSC603_2022_03_16_IO;
 // ADD BUFFER INPUT AND OUTPUT STREAM IN STRING
 import java.io.*;
 
 public class C3_BufferedStream {
     public static void main(String[] args) throws IOException {
 
-        File file = new File("src/COSC603_2022_03_16_IO/temp.dat");
+        File file = new File("src/COSC603_Advanced.COSC603_2022_03_16_IO/temp.dat");
 
         try (DataOutputStream output = new DataOutputStream(   new BufferedOutputStream   (    new FileOutputStream(file,false)        ))) {
             output.writeUTF("Dave");

@@ -1,0 +1,53 @@
+package Tim.Section7OOP2CompEncapPoly.Encapsolation.Printer;
+
+public class Printer {
+    //Att.
+    private int tonerLevel;
+    private int pagesPrinted;
+    private boolean duplex;
+
+    //Constructor
+
+
+    public Printer(int tonerLevel, boolean duplex) {
+        if (tonerLevel>-1 && tonerLevel<=100)
+            this.tonerLevel=tonerLevel;
+        else
+            this.tonerLevel=-1;
+        this.tonerLevel = tonerLevel;
+        this.duplex = duplex;
+        this.pagesPrinted=0;
+    }
+
+    //METHODS
+    public int addToner(int tonerAmount) {
+        if (tonerAmount > 0 && tonerAmount <= 100) {
+            if (this.tonerLevel+ tonerAmount>100) {
+                return -1;
+            }
+            this.tonerLevel+=tonerAmount;
+            return this.tonerLevel;
+        } else{
+            return -1;
+        }
+    }
+
+    public void fillUp(){
+        if (tonerLevel<100){
+            System.out.println("filling");
+        }
+    }
+    public int  printingPage(int pages){
+        int pagesToPrint=pages;
+        if(this.duplex){
+            pagesToPrint=(pages/2)+(pages%2);
+            System.out.println("Printing in duplex mode");
+        }
+        this.pagesPrinted+=pagesToPrint;
+        return pagesToPrint;
+    }
+
+    public int getPagesPrinted() {
+        return pagesPrinted;
+    }
+}

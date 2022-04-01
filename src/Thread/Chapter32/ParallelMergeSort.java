@@ -2,7 +2,7 @@ package Thread.Chapter32;
 
 import java.util.concurrent.RecursiveAction;
 import java.util.concurrent.ForkJoinPool;
-import chapter23.MergeSort;
+//import chapter23.MergeSort;
 
 public class ParallelMergeSort {
   public static void main(String[] args) {

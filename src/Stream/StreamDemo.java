@@ -16,7 +16,7 @@ public class StreamDemo {
     Stream.of(names).skip(4)
       .sorted((e1, e2) -> e1.compareToIgnoreCase(e2))
       .forEach(e -> System.out.print(e + " "));
-    
+
     System.out.println();
     Stream.of(names).skip(4)
       .sorted(String::compareToIgnoreCase)

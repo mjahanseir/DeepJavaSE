@@ -11,9 +11,9 @@ public class Main {
         //     Create subclass MyThreadSubClass and start it here.
         Thread threadSubClass= new MyThreadSubClass();
 
-        //Step7:
-        //      name a thread
-        threadSubClass.setName("+++++++++++++++++ Thread  Subclass ++++++++++++++");
+                    //Step7:
+                    //      name a thread
+                    threadSubClass.setName("+++++++++++++++++ Thread  Subclass ++++++++++++++");
 
         threadSubClass.start();
 
@@ -25,21 +25,21 @@ public class Main {
             }
         }.start(); /// << need to start
 
-        //Step5:
-        //     Invoke a First Runnable task
-        Thread myFirstRunnable= new Thread(new FirstRunnable());
-        myFirstRunnable.start();
+                    //Step5:
+                    //     Invoke a First Runnable task
+                    Thread myFirstRunnable= new Thread(new FirstRunnable());
+                    myFirstRunnable.start();
 
-        //Step6:
-        //     Alternate to step 5 - Invoke a Second Runnable task
-        Thread mSecondRunnable= new Thread(new SecondRunnable() {
-            @Override
-            public void run() {
-                super.run();
-                System.out.println(YELLOW + "Anonymous implementation of Second Runnable");
-            }
-        });
-        mSecondRunnable.start();
+                    //Step6:
+                    //     Alternate to step 5 - Invoke a Second Runnable task
+                    Thread mSecondRunnable= new Thread(new SecondRunnable() {
+                        @Override
+                        public void run() {
+                            super.run();
+                            System.out.println(YELLOW + "Anonymous implementation of Second Runnable");
+                        }
+                    });
+                    mSecondRunnable.start();
 
         //Step4:
         //     Another Main Thread output

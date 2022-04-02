@@ -6,9 +6,9 @@ public class CheckPoint3233_b implements Runnable {
     }
 
     public CheckPoint3233_b() {
-         // CheckPoint3233_a task = new CheckPoint3233_a();
-        //new Thread(task).start();
-        new Thread(this).start();
+        Thread t = new Thread(this);
+        t.start();
+        t.start();
     }
 
     public void run() {

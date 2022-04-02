@@ -9,14 +9,14 @@ class Interrupting extends Thread {
         t.interrupt();
     }
 
-    @Override
-    public synchronized void run() {
-        try {
-            wait();
-            System.out.println("After wait");
-        } catch (InterruptedException e) {
-            System.out.println("Interrupted");
+        @Override
+        public synchronized void run() {
+            try {
+                wait();
+                System.out.println("After wait");
+            } catch (InterruptedException e) {
+                System.out.println("Interrupted");
+            }
+            System.out.println("Resume");
         }
-        System.out.println("Resume");
-    }
 }

@@ -7,7 +7,7 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
-public class FlashText extends Application {
+public class Listing32_2_FlashText extends Application {
   private String text = "";
   
   @Override // Override the start method in the Application class

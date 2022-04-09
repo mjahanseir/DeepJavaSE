@@ -2,7 +2,8 @@ package Thread.Chapter32;
 
 import java.util.concurrent.*;
 
-public class AccountWithoutSync {
+public class Listing32_4_AccountWithoutSync {
+  //creates an Account with initial balance 0
   private static Account account = new Account();
 
   public static void main(String[] args) {

@@ -3,13 +3,13 @@ package Thread;
 class PrintThread implements Runnable{
     @Override
     public void run() {
-        for (int i=0 ; i<100 ; i++) {
+        for (int counter =0 ; counter<100 ; counter++) {
             try {
                 Thread.sleep(10);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            System.out.println(i);
+            System.out.println(counter);
         }
         Thread currentThread = Thread.currentThread();
         System.out.println("Class id "+currentThread.getId());
@@ -29,7 +29,7 @@ public class JavaCup17_Thread_1 {
             System.out.println(C);
             Thread currentThread = Thread.currentThread();
             System.out.println("Main ID" + currentThread.getId());
-            System.out.println("Main Name" + currentThread.getName());
+            System.out.println("Main Name " + currentThread.getName());
         }
     }
 }

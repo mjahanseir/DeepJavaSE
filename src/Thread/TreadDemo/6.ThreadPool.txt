@@ -1,0 +1,18 @@
+What are the benefits of using a thread pool?
+You can create a thread for each task.
+This approach is convenient for a single task execution,
+but it is not efficient for a large number of tasks,
+because you have to create a thread for each task.
+Starting a new thread for each task could limit throughput
+and cause poor performance. A thread pool is ideal to manage
+the number of tasks executing concurrently.
+
+
+How do you create a thread pool with three fixed threads?
+How do you submit a task to a thread pool?
+How do you know that all the tasks are finished?
+To create a thread pool with three threads, use
+ExecutorService executor = Executors.newFixedThreadPool(3);
+To submit a task, use
+executor.execute(task);
+To check whether all tasks in a pool are finished, invoke isTerminated() method.

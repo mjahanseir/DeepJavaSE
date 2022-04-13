@@ -2,9 +2,9 @@ package Thread;
 public class C1_ThreadIntro {
     public static void main(String[] args) {
         // Step 1: create a task object
-        Runnable printA = new PrnCh('a',100);
-        Runnable printB = new PrnCh('b',100);
-        Runnable print100 = new PrnNum(100);
+        Runnable printA = new PrnChar('a',100);
+        Runnable printB = new PrnChar('b',100);
+        Runnable print100 = new PrnNumb(100);
 
         // Step 2: create a thread object with task
         Thread t1 = new Thread(printA);

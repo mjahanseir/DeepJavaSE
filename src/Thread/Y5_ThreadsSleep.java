@@ -1,6 +1,6 @@
 package Thread;
 
-class Y4_TreadsYield {
+class Y5_ThreadsSleep {
     public static void main(String[] args) {
         Thread thread1= new Thread( new PrnChar('a', 100));
         Thread thread2= new Thread(new PrnChar('b', 100));
@@ -11,11 +11,11 @@ class Y4_TreadsYield {
     }
 }
 
-class PrnCh implements Runnable {
+class PrnChar implements Runnable {
     private char charToPrint;
     private int times;
 
-    public PrnCh(char charToPrint, int times) {
+    public PrnChar(char charToPrint, int times) {
         this.charToPrint = charToPrint;
         this.times = times;
     }
@@ -28,18 +28,22 @@ class PrnCh implements Runnable {
     }
 }
 
-class PrnNum implements Runnable {
+class PrnNumb implements Runnable {
     private int lastNum;
 
-    public PrnNum(int lastNum) {
+    public PrnNumb(int lastNum) {
         this.lastNum = lastNum;
     }
 
     @Override
     public void run() {
-        for (int i = 1; i <= lastNum; i++) {
-            System.out.print(" " + i);
-            Thread.yield();
+        try {
+            for (int i = 1; i <= lastNum; i++) {
+                System.out.print(" " + i);
+                if (i >= 50) Thread.sleep(1000);
+            }
+        }
+        catch (InterruptedException ex) {
         }
     }
 }

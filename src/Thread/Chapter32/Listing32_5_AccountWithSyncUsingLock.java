@@ -3,7 +3,7 @@ package Thread.Chapter32;
 import java.util.concurrent.*;
 import java.util.concurrent.locks.*;
 
-public class AccountWithSyncUsingLock {
+public class Listing32_5_AccountWithSyncUsingLock {
   private static Account account = new Account();
 
   public static void main(String[] args) {

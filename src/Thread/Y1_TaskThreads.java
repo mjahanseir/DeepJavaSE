@@ -2,9 +2,9 @@ package Thread;
 
 public class Y1_TaskThreads {
     public static void main(String[] args) {
-        Thread thread1= new Thread( new PrnChar('a', 100));
-        Thread thread2= new Thread(new PrnChar('b', 100));
-        Thread thread3= new Thread(new PrnNumb(100));
+        Thread thread1= new Thread( new PrnChara('a', 100));
+        Thread thread2= new Thread(new PrnChara('b', 100));
+        Thread thread3= new Thread(new PrnNumber(100));
         thread1.start();
         thread2.start();
         thread3.start();

@@ -1,6 +1,6 @@
 package Thread;
 
-public class Y1_TaskThreads {
+class Y4_TreadsYield {
     public static void main(String[] args) {
         Thread thread1= new Thread( new PrnCh('a', 100));
         Thread thread2= new Thread(new PrnCh('b', 100));
@@ -10,11 +10,12 @@ public class Y1_TaskThreads {
         thread3.start();
     }
 }
-class PrintCharacter implements Runnable {
+
+class PrnCh implements Runnable {
     private char charToPrint;
     private int times;
 
-    public PrintCharacter(char charToPrint, int times) {
+    public PrnCh(char charToPrint, int times) {
         this.charToPrint = charToPrint;
         this.times = times;
     }
@@ -26,10 +27,11 @@ class PrintCharacter implements Runnable {
         }
     }
 }
-class PrintNumber implements Runnable {
+
+class PrnNum implements Runnable {
     private int lastNum;
 
-    public PrintNumber(int lastNum) {
+    public PrnNum(int lastNum) {
         this.lastNum = lastNum;
     }
 
@@ -37,6 +39,7 @@ class PrintNumber implements Runnable {
     public void run() {
         for (int i = 1; i <= lastNum; i++) {
             System.out.print(" " + i);
+            Thread.yield();
         }
     }
 }

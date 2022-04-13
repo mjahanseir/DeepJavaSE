@@ -1,10 +1,10 @@
 package Thread;
 
-public class Y2_TestThread2 implements Runnable {
+public class Y3_TestThread2 implements Runnable {
     public static void main(String[] args) {
-        new Y2_TestThread2();
+        new Y3_TestThread2();
     }
-    public Y2_TestThread2() {
+    public Y3_TestThread2() {
         Thread t = new Thread(this);
         t.start();
         //t.start();

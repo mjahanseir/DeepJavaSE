@@ -1,7 +1,5 @@
 package Generic.chapter19;
 
-import chapter13.GeometricObject;
-import chapter13.Rectangle;
 
 public class BoundedTypeDemo {
   public static void main(String[] args ) {

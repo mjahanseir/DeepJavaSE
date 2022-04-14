@@ -1,7 +1,5 @@
 package Generic.chapter19;
 
-import chapter13.Rational;
-
 public class RationalMatrix extends GenericMatrix<Rational> {
   @Override /** Add two rational numbers */
   protected Rational add(Rational r1, Rational r2) {

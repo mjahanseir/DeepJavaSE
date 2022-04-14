@@ -1,6 +1,5 @@
 package Generic.chapter19;
 
-import chapter13.Circle;
 import chapter13.GeometricObject;
 import chapter13.Rectangle;
 

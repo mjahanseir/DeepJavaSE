@@ -1,7 +1,5 @@
 package Generic.chapter19;
 
-import chapter13.Rational;
-
 public class TestRationalMatrix {
   public static void main(String[] args) {
     // Create two Rational arrays m1 and m2

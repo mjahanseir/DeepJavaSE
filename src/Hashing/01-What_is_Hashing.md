@@ -1,7 +1,8 @@
 
-## What is a hash function? 
-What is a perfect hash function? 
-What is a collision?
+## What Is Hashing
+- What is a hash function? 
+- What is a perfect hash function? 
+- What is a collision?
 If you know the index of an element in the array, 
 you can retrieve the element using the index in O(1) time. 
 So, can we store the values in an array and use the key as 
@@ -18,7 +19,6 @@ However, it is difficult to find a perfect hash function.
 When two or more keys are mapped to the same hash value, 
 we say that a collision has occurred.
 
-hr
 
 ## What is a hash code?
 A typical hash function first converts a search key to an integer 

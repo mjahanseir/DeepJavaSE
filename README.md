@@ -16,7 +16,7 @@
 - Thread: [Thread](https://github.com/mjahanseir/DeepJavaSE/tree/master/src/Thread)
 - Network: [Network](https://github.com/mjahanseir/DeepJavaSE/tree/master/src/Network)
 - Database:[Database](https://github.com/mjahanseir/DeepJavaSE/tree/master/src/JDBC)
-<hr>
+<br>
 - Hashing :[Hashing](https://github.com/mjahanseir/DeepJavaSE/tree/master/src/Hashing)
-        Describe an ADT for a hash table
-        Collision Resolution in Hash Tables
+        - [Describe an ADT for a hash table](https://github.com/mjahanseir/DeepJavaSE/blob/master/src/Hashing/00_1_Describe_an_ADT_for_a_hash_table.md)
+        - [Collision Resolution in Hash Tables](https://github.com/mjahanseir/DeepJavaSE/blob/master/src/Hashing/00_2_Collision_Resolution_in_Hash_Tables.md)

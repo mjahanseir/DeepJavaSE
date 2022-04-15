@@ -28,5 +28,6 @@ To ensure that the indices are spread evenly, choose N to be a prime number grea
 <hr>
 - Suppose int N = 256, what is Integer.valueOf("-98").hashCode() % N and what is Integer.valueOf("-98").hashCode() & (N - 1)?
   
-Integer.valueOf("-98").hashCode() % N is -98
+                Integer.valueOf("-98").hashCode() % N is -98
+.
                 Integer.valueOf("-98").hashCode() & (N - 1) 158

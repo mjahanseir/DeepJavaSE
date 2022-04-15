@@ -3,7 +3,7 @@ package Thread.Chapter32;
 import java.util.concurrent.*;
 import java.util.concurrent.locks.*;
 
-public class ThreadCooperation {
+public class Listing32_6_ThreadCooperation {
   private static Account account = new Account();
 
   public static void main(String[] args) {

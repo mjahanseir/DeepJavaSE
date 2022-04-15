@@ -1,20 +1,17 @@
 package Thread;
-
-import Stream.Company.Customer;
-
 import java.util.LinkedList;
 import java.util.List;
-
 public class JavaCup17_Thread_3 {
     public static void main(String[] args) throws InterruptedException {
-
         List<Integer> list = new LinkedList<>();
         Thread[] threads= {
-                new Producer(list),  new Producer(list),
-                new Consumer(list),  new Consumer(list)   };
+                new Producer(list),
+                new Producer(list),
+                new Consumer(list),
+                new Consumer(list)
+        };
         for(Thread thread:threads)
             thread.start();
-
         for(Thread thread:threads)
             thread.join();
         System.out.println("Finished:" + list.size());
@@ -23,7 +20,8 @@ public class JavaCup17_Thread_3 {
 class Producer extends Thread{
     List<Integer> list;
     public Producer(List<Integer> list) {
-        this.list = list;   }
+        this.list = list;
+    }
     public void run(){
         for (Integer i =0 ; i<100 ; i++){
             synchronized (list){
@@ -35,19 +33,15 @@ class Producer extends Thread{
             try{
                 Thread.sleep((long) (Math.random()*10));
             }catch (InterruptedException e){
-
             }
         }
     }
 }
-
 class Consumer extends Thread {
     List<Integer> list;
-
     public Consumer(List<Integer> list) {
         this.list = list;
     }
-
     public void run() {
         for (Integer i = 0; i < 100; i++) {
             synchronized (list) {
@@ -55,7 +49,6 @@ class Consumer extends Thread {
                     try {
                         list.wait();
                     } catch (InterruptedException e) {
-
                     }
                 }
                 Integer fetch= list.remove(0);

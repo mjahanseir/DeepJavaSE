@@ -1,8 +1,11 @@
 package JDBC.JDBCimtiaz;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
 
-public class JDBCdemo {
+public class JDBCcurd {
     public static void main(String[] args) {
         String url="jdbc:mysql://127.0.0.1:3306/employees_database";
         try {
@@ -13,16 +16,11 @@ public class JDBCdemo {
             Statement statement= conn.createStatement();
 
             //SEND query to DB -> EXECUTE the statement
-            ResultSet resultSet=statement.executeQuery("select * from employees_tbl");
-
+            statement.executeUpdate("insert into employees_tbl  " +
+                    "(id, name, dept, salary) " +
+                    "value (800, \"John\", \"Sales\", 5500);");
             //Process the result
-
-            int salaryTotal=0;
-            while(resultSet.next()){
-                salaryTotal= salaryTotal + resultSet.getInt("salary");
-                System.out.println(resultSet.getString("dept"));
-            }
-            System.out.println("salaryTotal: "+salaryTotal);
+            System.out.println("Execute an Insert statement");
         } catch (SQLException e) {
             e.printStackTrace();
         }

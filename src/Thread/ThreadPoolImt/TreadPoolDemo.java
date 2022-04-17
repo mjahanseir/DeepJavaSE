@@ -1,6 +1,8 @@
 package Thread.ThreadPoolImt;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
+
 public class TreadPoolDemo {
     public static void main(String[] args) {
         ExecutorService executor= Executors.newFixedThreadPool(2);
@@ -18,6 +20,15 @@ public class TreadPoolDemo {
         executor.execute(processor4);
 
         executor.shutdown(); //Reject any new task from being submitted
+        // executor.shutdownNow();// shut down immediately
+
+//        while(!executor.isTerminated()){
+//
+//        }
+
+        try {
+            executor.awaitTermination(2, TimeUnit.SECONDS);
+        } catch (InterruptedException e) {}
 
         System.out.println("submitted all task......");
     }

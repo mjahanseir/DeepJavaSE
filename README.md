@@ -15,7 +15,11 @@
 
 - [Unit Testing](https://github.com/mjahanseir/DeepJavaSE/tree/master/src/UnitTesting)
   - [String Calculator with TDD approach](https://github.com/mjahanseir/DeepJavaSE/tree/master/src/StringCalculator)
+<<<<<<< HEAD
 ###Data Structure
+=======
+### Data Structure
+>>>>>>> origin/master
 - [Generic](https://github.com/mjahanseir/DeepJavaSE/tree/master/src/Generic)
 - Recursion
 - [Hashing](https://github.com/mjahanseir/DeepJavaSE/tree/master/src/Hashing)
@@ -25,4 +29,8 @@
 ### Advanced Java Programming
 - [Thread](https://github.com/mjahanseir/DeepJavaSE/tree/master/src/Thread)
 - [Network](https://github.com/mjahanseir/DeepJavaSE/tree/master/src/Network)
+<<<<<<< HEAD
 - [Database](https://github.com/mjahanseir/DeepJavaSE/tree/master/src/JDBC)
+=======
+- [Database](https://github.com/mjahanseir/DeepJavaSE/tree/master/src/JDBC)
+>>>>>>> origin/master

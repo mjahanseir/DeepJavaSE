@@ -15,10 +15,13 @@ public class JDBCdemo {
             //SEND query to DB -> EXECUTE the statement
             ResultSet resultSet=statement.executeQuery("select * from employees_tbl");
             //Process the result
+
+            int salaryTotal=0;
             while(resultSet.next()){
+                salaryTotal= salaryTotal + resultSet.getInt("salary");
                 System.out.println(resultSet.getString("dept"));
-                System.out.println(resultSet.getString("salary"));
             }
+            System.out.println("salaryTotal: "+salaryTotal);
         } catch (SQLException e) {
             e.printStackTrace();
         }

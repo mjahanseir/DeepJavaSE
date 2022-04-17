@@ -1,4 +1,4 @@
-package chapter27;
+package Hashing.chapter27;
 
 import java.util.LinkedList;
 

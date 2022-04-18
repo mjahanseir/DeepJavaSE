@@ -1,6 +1,7 @@
-package Graph.chapter28;
+package Graph.chapter29;
 
-import Graph.chapter29.UnweightedGraph;
+import Graph.chapter28.Edge;
+import Graph.chapter28.UnweightedGraph;
 
 public interface Graph<V> {
   /** Return the number of vertices in the graph */
@@ -42,12 +43,10 @@ public interface Graph<V> {
   /** Remove an edge (u, v) from the graph */  
   public boolean remove(int u, int v);
   
-  /** Obtain a depth-first search tree
-   * @return*/
-  public Graph.chapter29.UnweightedGraph<V>.SearchTree dfs(int v);
+  /** Obtain a depth-first search tree */
+  public UnweightedGraph<V>.SearchTree dfs(int v);
 
-  /** Obtain a breadth-first search tree
-   * @return*/
+  /** Obtain a breadth-first search tree */
   public UnweightedGraph<V>.SearchTree bfs(int v);
 }
 

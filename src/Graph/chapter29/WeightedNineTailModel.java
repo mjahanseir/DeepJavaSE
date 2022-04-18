@@ -1,7 +1,5 @@
-package Graph.Chapter29WeightedGraphs;
+package Graph.chapter29;
 
-import chapter28.NineTailModel;
-import chapter28.Graph;
 import java.util.*;
 
 public class WeightedNineTailModel extends NineTailModel {

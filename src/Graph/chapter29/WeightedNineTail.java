@@ -1,6 +1,5 @@
-package Graph.Chapter29WeightedGraphs;
+package Graph.chapter29;
 
-import chapter28.NineTailModel;
 import java.util.Scanner;
 
 public class WeightedNineTail {

@@ -1,10 +1,14 @@
-package Graph.chapter28;
+package Graph.chapter29;
 
-import java.util.*;
+import Graph.chapter28.Edge;
 
-public class UnweightedGraph<V> implements Graph<V> {
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+
+public class UnweightedGraph<V> implements Graph.chapter28.Graph<V> {
   protected List<V> vertices = new ArrayList<>(); // Store vertices
-  protected List<List<Edge>> neighbors 
+  protected List<List<Edge>> neighbors
     = new ArrayList<>(); // Adjacency lists
 
   /** Construct an empty graph */
@@ -147,7 +151,7 @@ public class UnweightedGraph<V> implements Graph<V> {
   
   @Override /** Obtain a DFS tree starting from vertex u */
   /** To be discussed in Section 28.7 */
-  public Graph.chapter29.UnweightedGraph<V>.SearchTree dfs(int v) {
+  public SearchTree dfs(int v) {
     List<Integer> searchOrder = new ArrayList<>();
     int[] parent = new int[vertices.size()];
     for (int i = 0; i < parent.length; i++)
@@ -180,7 +184,7 @@ public class UnweightedGraph<V> implements Graph<V> {
 
   @Override /** Starting bfs search from vertex v */
   /** To be discussed in Section 28.9 */
-  public Graph.chapter29.UnweightedGraph<V>.SearchTree bfs(int v) {
+  public SearchTree bfs(int v) {
     List<Integer> searchOrder = new ArrayList<>();
     int[] parent = new int[vertices.size()];
     for (int i = 0; i < parent.length; i++)

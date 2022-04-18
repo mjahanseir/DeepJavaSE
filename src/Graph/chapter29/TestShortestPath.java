@@ -1,6 +1,6 @@
-package Graph.Chapter29WeightedGraphs;
+package Graph.chapter29;
 
-public class TestMinimumSpanningTree {
+public class TestShortestPath {
   public static void main(String[] args) {
     String[] vertices = {"Seattle", "San Francisco", "Los Angeles",
       "Denver", "Kansas City", "Chicago", "Boston", "New York",
@@ -27,22 +27,29 @@ public class TestMinimumSpanningTree {
 
     WeightedGraph<String> graph1 = 
       new WeightedGraph<>(vertices, edges);
-    WeightedGraph<String>.MST tree1 = graph1.getMinimumSpanningTree();
-    System.out.println("Total weight is " + tree1.getTotalWeight());
-    tree1.printTree();
+    WeightedGraph<String>.ShortestPathTree tree1 = 
+      graph1.getShortestPath(graph1.getIndex("Chicago"));
+    tree1.printAllPaths();
 
-    edges = new int[][]{
+    // Display shortest paths from Houston to Chicago
+    System.out.print("Shortest path from Houston to Chicago: ");
+    java.util.List<String> path 
+      = tree1.getPath(graph1.getIndex("Houston"));
+    for (String s: path) {
+      System.out.print(s + " ");
+    }
+
+    edges = new int[][] {
       {0, 1, 2}, {0, 3, 8}, 
       {1, 0, 2}, {1, 2, 7}, {1, 3, 3},
       {2, 1, 7}, {2, 3, 4}, {2, 4, 5},
       {3, 0, 8}, {3, 1, 3}, {3, 2, 4}, {3, 4, 6},
       {4, 2, 5}, {4, 3, 6}
     };
-
     WeightedGraph<Integer> graph2 = new WeightedGraph<>(edges, 5);
-    WeightedGraph<Integer>.MST tree2 = 
-      graph2.getMinimumSpanningTree(1);
-    System.out.println("\nTotal weight is " + tree2.getTotalWeight());
-    tree2.printTree();
+    WeightedGraph<Integer>.ShortestPathTree tree2 = 
+      graph2.getShortestPath(3);
+    System.out.println("\n");
+    tree2.printAllPaths();
   }
 }

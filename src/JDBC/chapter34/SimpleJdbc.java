@@ -6,8 +6,8 @@ public class SimpleJdbc {
   public static void main(String[] args)
       throws SQLException, ClassNotFoundException {
     // Load the JDBC driver
-    Class.forName("com.mysql.jdbc.Driver");
-    System.out.println("Driver loaded");
+//    Class.forName("com.mysql.jdbc.Driver");
+//    System.out.println("Driver loaded");
 
     // Establish a connection
     Connection connection = DriverManager.getConnection
@@ -18,9 +18,7 @@ public class SimpleJdbc {
     Statement statement = connection.createStatement();
 
     // Execute a statement
-    ResultSet resultSet = statement.executeQuery
-      ("select firstName, mi, lastName from Student where lastName "
-        + " = 'Smith'");
+    ResultSet resultSet = statement.executeQuery ("select firstName, mi, lastName from Student where lastName "  + " = 'Smith'");
 
     // Iterate through the result and print the student names
     while (resultSet.next())

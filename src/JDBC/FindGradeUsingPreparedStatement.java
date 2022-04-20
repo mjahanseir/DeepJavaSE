@@ -41,19 +41,12 @@ public class FindGradeUsingPreparedStatement extends Application {
     primaryStage.setScene(scene); // Place the scene in the stage
     primaryStage.show(); // Display the stage   
   }
-
+////////////////////////////////////////////////////////////////////////
   private void initializeDB() {
     try {
-      // Load the JDBC driver
-      Class.forName("com.mysql.jdbc.Driver");
-//      Class.forName("oracle.jdbc.driver.OracleDriver");
-      System.out.println("Driver loaded");
-
       // Establish a connection
       Connection connection = DriverManager.getConnection
         ("jdbc:mysql://localhost/javabook", "scott", "tiger");
-//    ("jdbc:oracle:thin:@liang.armstrong.edu:1521:orcl",
-//     "scott", "tiger");
       System.out.println("Database connected");
 
       String queryString = "select firstName, mi, " +
@@ -68,7 +61,7 @@ public class FindGradeUsingPreparedStatement extends Application {
       ex.printStackTrace();
     }
   }
-
+////////////////////////////////////////////////////////////////////////
   private void showGrade() {
     String ssn = tfSSN.getText();
     String courseId = tfCourseId.getText();
@@ -95,13 +88,5 @@ public class FindGradeUsingPreparedStatement extends Application {
     catch (SQLException ex) {
       ex.printStackTrace();
     }
-  }
-
-  /**
-   * The main method is only needed for the IDE with limited
-   * JavaFX support. Not needed for running from the command line.
-   */
-  public static void main(String[] args) {
-    launch(args);
   }
 }

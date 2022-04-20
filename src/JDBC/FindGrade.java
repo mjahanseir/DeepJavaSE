@@ -41,10 +41,12 @@ public class FindGrade extends Application {
     primaryStage.show(); // Display the stage   
   }
 
+////////////////////////////////////////////////////////////////////////
   private void initializeDB() {
     try {
       // Establish a connection
-      Connection connection = DriverManager.getConnection("jdbc:mysql://localhost/javabook", "scott", "tiger");
+      Connection connection = DriverManager.
+              getConnection("jdbc:mysql://localhost/javabook", "scott", "tiger");
       System.out.println("Database connected");
 
       // Create a statement
@@ -54,6 +56,7 @@ public class FindGrade extends Application {
       ex.printStackTrace();
     }
   }
+  ////////////////////////////////////////////////////////////////////////
   private void showGrade() {
     String ssn = tfSSN.getText();
     String courseId = tfCourseId.getText();

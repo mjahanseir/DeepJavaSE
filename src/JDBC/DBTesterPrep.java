@@ -27,7 +27,7 @@ public class DBTesterPrep {
 
         //the connection string to determine the driver
         //                                                         ome: jdbc:mysql://localhost/sakila" , username , Password
-        try(Connection connection = DriverManager.getConnection("jdbc:mysql://192.168.75.128/sakila","student","letmein" )) {
+        try(Connection connection = DriverManager.getConnection("jdbc:mysql://localhost/sakila","root","Mo123456789" )) {
             //////////////////////////////////////// 3
             // Create a statement
             // Use the connection object to create a simple statement
@@ -120,7 +120,7 @@ public class DBTesterPrep {
             //  use set_________ to bind the parameter .....  specify what variable gets substituted
             //  where when th db server actually execute the query
 
-            preparedStatement.setString(1,"50");
+          //  preparedStatement.setString(1,"50");
 
 
             preparedStatement2.setInt(1, idNum);

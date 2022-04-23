@@ -15,7 +15,7 @@ private static Account account= new Account();
         executor.shutdown();
         while (!executor.isTerminated()){
         }
-        System.out.println("What is balance :"+account.getBalance());
+        System.out.println("What is balance : "+account.getBalance());
     }// End of main
 
     ///////////////////////////////////////////////////////////

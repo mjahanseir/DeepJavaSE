@@ -40,7 +40,7 @@ public class FindGradeUsingPreparedStatement extends Application {
     primaryStage.setTitle("FindGrade"); // Set the stage title
     primaryStage.setScene(scene); // Place the scene in the stage
     primaryStage.show(); // Display the stage   
-  }
+  }//  end of start
 ////////////////////////////////////////////////////////////////////////
   private void initializeDB() {
     try {

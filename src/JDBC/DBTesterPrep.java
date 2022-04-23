@@ -18,46 +18,48 @@ public class DBTesterPrep {
 
                              **/
 
-        //////////////////////////////////////// 1
+        //////////////////////////////////////// Step 1
         // Load the JDBC driver
         // Class.forName("com.mysql.jdbc.Driver");
 
-        //////////////////////////////////////// 2
-        // Establish a connection
+        //////////////////////////////////////// Step 2
+        //                              Establish a connection
 
         //the connection string to determine the driver
-        //                                                         ome: jdbc:mysql://localhost/sakila" , username , Password
+        //                                                       or: jdbc:mysql://localhost/sakila" , username , Password
         try(Connection connection = DriverManager.getConnection("jdbc:mysql://localhost/sakila","root","Mo123456789" )) {
+
             //////////////////////////////////////// 3
-            // Create a statement
+            //                          Create a statement
             // Use the connection object to create a simple statement
-            //simple meaning unparametrized.
+            //simple meaning un-parametrized.
+
             Statement statement = connection.createStatement();
 
             //////////////////////////////////////// 4
-            // Execute a statement
-            //we then can generate a resultset by calling executeQuery or
+            //                              Execute a statement
+            //we then can generate a result-set by calling executeQuery or
             //executeUpdate. We would use the latter if th query is for DDL or Update
 
             ResultSet results= statement.executeQuery ("select * from actor");
 
             //////////////////////////////////////// 5
+
+            //                          Iterate through the result and print
+
             //// A resultSet stores the result of the query so consists of rows and columns.
             // This means we can iterate through it using a loop, much like we did with files
             // or the scanner.
             // We'll use next() to check if there is a row available to be read, then use
             // get  to read a particular value according to the columns in the results.
             // The columns are determined by the query and what it returns
+
            while( results.next()) {
                System.out.println(results.getString(1) + " \t" +
                        results.getString(2) + "\t " +
                        results.getString(3) + "\t " +
                        results.getString(4));
            }
-            //////////////////////////////////////// 5
-            // Iterate through the result and print
-//            while (results.next())
-//                System.out.println(results.getString(1) + "\t" + results.getString(2) + "\t" + results.getString(3) +  "\t" + results.getString(4) );
 
             //////////////////////////////////////// 6
             /**

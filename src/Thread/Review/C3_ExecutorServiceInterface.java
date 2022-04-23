@@ -9,6 +9,6 @@ public class C3_ExecutorServiceInterface {
         exe.execute(new chr(100,'a'));
         exe.execute(new chr(100,'b'));
         exe.execute(new num(100));
-        //exe.shutdown();
+        exe.shutdown();
     }
 }

@@ -20,7 +20,6 @@ public class C1_ThreadIntro {
         t3.start();
     }
 }
-
 class PrintChar implements Runnable{
     private  char charToPrint;
     private int times;

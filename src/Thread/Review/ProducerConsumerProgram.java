@@ -14,6 +14,15 @@ public class ProducerConsumerProgram {
     private static class Producer implements Runnable{
         @Override
         public void run() {
+            try {
+                int i=1;
+                while(true) {
+                    System.out.println("Producer write " + i);
+                    Thread.sleep((int) (Math.random() * 1000));
+                }
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
     }// END OF PRODUCER
     /** reading and deleting an int from the buffer */

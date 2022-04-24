@@ -1,16 +1,15 @@
 package Thread.Review;
-
 import java.util.LinkedList;
-import java.util.concurrent.locks.Condition;
-import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.ReentrantLock;
-
+import java.util.concurrent.*;
+import java.util.concurrent.locks.*;
 public class ProducerConsumerProgram {
-
+    private static Buffer buffer = new Buffer();
     public static void main(String[] args) {
-
+        ExecutorService executorService= Executors.newFixedThreadPool(2);
+        executorService.execute(new Producer());
+        executorService.execute(new Consumer());
+        executorService.shutdown();
     }//END OF main
-
     /**  adding an int to the buffer */
     private static class Producer implements Runnable{
         @Override
@@ -23,16 +22,13 @@ public class ProducerConsumerProgram {
         public void run() {
         }
     }// END OF CONSUMER
-
     /** n inner class for buffer */
     private static class Buffer{
         private static final int CAPACITY = 1; // buffer size
         private LinkedList<Integer> queue = new LinkedList<>();
-
         private static Lock lock= new ReentrantLock();
         private static Condition noEmpty= lock.newCondition();
         private static Condition noFull= lock.newCondition();
-
         public void write(int value){
             lock.lock(); // Acquire the lock
             try {
@@ -42,8 +38,7 @@ public class ProducerConsumerProgram {
                 }
                 queue.offer(value);
                 noEmpty.signal();
-            }catch (InterruptedException ex){
-                ex.printStackTrace();
+            }catch (InterruptedException ex){  ex.printStackTrace();
             }finally {
                 lock.unlock();
             }
@@ -58,8 +53,7 @@ public class ProducerConsumerProgram {
                 }
                 value= queue.remove();
                 noFull.signal();
-            }catch (InterruptedException ex){
-                ex.printStackTrace();
+            }catch (InterruptedException ex){  ex.printStackTrace();
             }finally {
                 lock.unlock();
                 return value;

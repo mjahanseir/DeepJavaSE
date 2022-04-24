@@ -48,7 +48,22 @@ public class ProducerConsumerProgram {
                 lock.unlock();
             }
         }
-        public int read(){}
+        public int read(){
+            int value = 0;
+            lock.lock();
+            try {
+                while(queue.isEmpty()){
+                    System.out.println("\t\t\tWait for notEmpty condition");
+                    noEmpty.await();
+                }
+                value= queue.remove();
+                noFull.signal();
+            }catch (InterruptedException ex){
+                ex.printStackTrace();
+            }finally {
+                lock.unlock();
+                return value;
+            }
+        }
     }// END OF BUFFER
-
 }//END OF CLASS

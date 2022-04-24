@@ -6,10 +6,7 @@ import java.util.concurrent.locks.*;
 
 public class C3_ConsumerProducer {
 
-
     private static Buffer buffer = new Buffer();
-
-
 
     public static void main(String[] args) {
         /////////////////////////////////////////////////////////////////   E
@@ -61,9 +58,7 @@ public class C3_ConsumerProducer {
         //////////////////////step 1:
          // buffer size
         private static final int CAPACITY = 1;
-
-        private LinkedList<Integer> queue = new LinkedList<Integer>();
-
+        private LinkedList<Integer> queue = new LinkedList<>();
         /////////////////////step 2 create a lock as a shares
         // Create a new lock
         private static Lock lock = new ReentrantLock();
@@ -72,10 +67,8 @@ public class C3_ConsumerProducer {
         private static Condition notEmpty = lock.newCondition();
         private static Condition notFull = lock.newCondition();
 
-
         /////////////////////step3 : implement 2 methods : read and write
         public void write(int value) {
-
             lock.lock(); // Acquire the lock
             try {
                 while (queue.size() == CAPACITY) {
@@ -91,7 +84,6 @@ public class C3_ConsumerProducer {
                 lock.unlock(); // Release the lock
             }
         }
-
         public int read() {
             int value = 0;
             lock.lock(); // Acquire the lock

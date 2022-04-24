@@ -1,7 +1,7 @@
 package Network.Review;
-
-import Network.chapter33.Listing33_6_StudentClient;
 import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.geometry.HPos;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -11,7 +11,9 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
-
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+import java.net.Socket;
 public class C5_StudentClient extends Application {
     private TextField tfName = new TextField();
     private TextField tfStreet = new TextField();
@@ -19,7 +21,6 @@ public class C5_StudentClient extends Application {
     private TextField tfState = new TextField();
     private TextField tfZip = new TextField();
     private Button btRegister = new Button("Register to the Server");
-    String host = "localhost";
     @Override
     public void start(Stage primaryStage) {
         GridPane pane = new GridPane();
@@ -44,5 +45,24 @@ public class C5_StudentClient extends Application {
         primaryStage.setTitle("StudentClient"); // Set the stage title
         primaryStage.setScene(scene); // Place the scene in the stage
         primaryStage.show(); // Display the stage
+    }
+    private class ButtonListener implements EventHandler<ActionEvent>{
+        @Override
+        public void handle(ActionEvent actionEvent) {
+            try {
+                Socket socket= new Socket("localhost" , 8005);
+                ObjectOutputStream objectOutputStream= new ObjectOutputStream(socket.getOutputStream());
+                String name= tfName.getText().trim();
+                String street= tfStreet.getText().trim();
+                String city= tfCity.getText().trim();
+                String state= tfState.getText().trim();
+                String zip= tfZip.getText().trim();
+                C5_StudentAddress s= new C5_StudentAddress(name, street, city,state,zip);
+                objectOutputStream.writeObject(s);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+        }
     }
 }

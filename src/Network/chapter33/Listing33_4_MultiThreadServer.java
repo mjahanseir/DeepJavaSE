@@ -10,7 +10,7 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextArea;
 import javafx.stage.Stage;
 
-public class MultiThreadServer extends Application {
+public class Listing33_4_MultiThreadServer extends Application {
   // Text area for displaying contents
   private TextArea ta = new TextArea();
   

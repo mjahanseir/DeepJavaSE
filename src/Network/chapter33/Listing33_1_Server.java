@@ -10,7 +10,7 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextArea;
 import javafx.stage.Stage;
 
-public class Server extends Application {
+public class Listing33_1_Server extends Application {
   @Override // Override the start method in the Application class
   public void start(Stage primaryStage) {
     // Text area for displaying contents

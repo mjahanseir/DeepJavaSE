@@ -18,6 +18,7 @@ public class ProducerConsumerProgram {
                 int i=1;
                 while(true) {
                     System.out.println("Producer write " + i);
+                    buffer.write(i++);
                     Thread.sleep((int) (Math.random() * 1000));
                 }
             } catch (InterruptedException e) {
@@ -29,6 +30,14 @@ public class ProducerConsumerProgram {
     private static class Consumer implements Runnable{
         @Override
         public void run() {
+            try{
+                while(true){
+                    System.out.println("\t\t\t consumer reads " + buffer.read());
+                    Thread.sleep((int) (Math.random() * 1000));
+                }
+            }catch (InterruptedException ex){
+                ex.printStackTrace();
+            }
         }
     }// END OF CONSUMER
     /** n inner class for buffer */

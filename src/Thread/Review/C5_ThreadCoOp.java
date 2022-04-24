@@ -1,14 +1,8 @@
 package Thread.Review;
-
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.locks.Condition;
-import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.ReentrantLock;
-
+import java.util.concurrent.*;
+import java.util.concurrent.locks.*;
 public class C5_ThreadCoOp {
     private static Account account= new Account();
-
     public static void main(String[] args) {
         ExecutorService executorService= Executors.newFixedThreadPool(2);
         executorService.execute(new Deposit());
@@ -31,21 +25,15 @@ public class C5_ThreadCoOp {
     }//END OF Withdraw
     private static class Account{
         private static Lock lock= new ReentrantLock(); //A lock is created
-        // The deposit task acquires the lock in line 76
-//and signals all waiting threads (line 83) for the newDeposit condition after a new deposit
-//is made.
+        // The deposit task acquires the lock
+        //and signals all waiting threads (line 83) for the newDeposit condition after a new deposit is made.
         private static Condition newDeposit = lock.newCondition(); // A condition named newDeposit on the lock is created
         // A condition is bound to a lock. Before waiting or signaling the condition,
         // a thread must first acquire the lock for the condition.
         private int balance=0;
-
-        public int getBalance() {
-            return balance;
-        }
-
+        public int getBalance() {   return balance;  }
         public void withdraw(int amount){
-            //The withdraw task acquires the lock , waits for the newDeposit condition
-            // when there is not a sufficient amount to withdraw, and releases the lock.
+            //The withdraw task acquires the lock , waits for the newDeposit condition when there is not a sufficient amount to withdraw, and releases the lock.
             lock.lock();
             try {
                 while (balance<amount){
@@ -54,11 +42,8 @@ public class C5_ThreadCoOp {
                 }
                 balance-=amount;
                 System.out.println("\t\t\t   Withdraw  "+ amount + "\t\t "+ getBalance());
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            } finally {
-                lock.unlock();
-            }
+            } catch (InterruptedException e) {  e.printStackTrace();
+            } finally { lock.unlock();  }
         }
         public void deposit(int amount){
             lock.lock();
@@ -66,9 +51,7 @@ public class C5_ThreadCoOp {
                 balance+=amount;
                 System.out.println("Deposit  " + amount + "\t\t\t\t"+ getBalance());
                 newDeposit.signalAll();
-            }finally {
-                lock.unlock();
-            }
+            }finally {  lock.unlock();  }
         }
     }//END OF Account
 }// END OF CLASS

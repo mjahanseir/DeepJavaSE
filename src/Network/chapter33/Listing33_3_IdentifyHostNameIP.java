@@ -2,7 +2,7 @@ package Network.chapter33;
 
 import java.net.*;
 
-public class IdentifyHostNameIP {
+public class Listing33_3_IdentifyHostNameIP {
   public static void main(String[] args) {
     for (int i = 0; i < args.length; i++) {
       try {

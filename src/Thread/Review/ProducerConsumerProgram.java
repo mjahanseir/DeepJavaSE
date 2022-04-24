@@ -39,6 +39,7 @@ public class ProducerConsumerProgram {
                 ex.printStackTrace();
             }
         }
+
     }// END OF CONSUMER
     /** n inner class for buffer */
     private static class Buffer{

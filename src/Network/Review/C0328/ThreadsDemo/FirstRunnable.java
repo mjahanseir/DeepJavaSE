@@ -1,5 +1,5 @@
 package Network.Review.C0328.ThreadsDemo;
-import static COSC604_2022_03_28_Thread.TreadDemo.TextColor.*;
+import static TreadDemo.TextColor.*;
 
 public class FirstRunnable implements Runnable{
     @Override

@@ -1,5 +1,5 @@
-package Network.Review.C0328.ThreadsDemo;
-import static TreadDemo.TextColor.*;
+package Thread.Review.C0328.ThreadsDemo;
+import static Thread.Review.C0328.ThreadsDemo.TextColor.*;
 
 public class FirstRunnable implements Runnable{
     @Override

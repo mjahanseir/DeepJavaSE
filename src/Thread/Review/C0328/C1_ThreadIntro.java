@@ -1,4 +1,4 @@
-package Network.Review.C0328;
+package Thread.Review.C0328;
 
 public class C1_ThreadIntro {
 

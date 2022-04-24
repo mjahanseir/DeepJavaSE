@@ -1,6 +1,6 @@
-package Network.Review.C0328.ThreadsDemo;
+package Thread.Review.C0328.ThreadsDemo;
 
-import static COSC604_2022_03_28_Thread.TreadDemo.TextColor.*;
+import static Thread.Review.C0328.ThreadsDemo.TextColor.*;
 
 public class SecondRunnable implements Runnable{
     @Override

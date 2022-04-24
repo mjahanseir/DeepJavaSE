@@ -1,4 +1,4 @@
-package Network.Review.C0328.ThreadsDemo;
+package Thread.Review.C0328.ThreadsDemo;
 
 public class TextColor {
     // Unix escape code for altering text color

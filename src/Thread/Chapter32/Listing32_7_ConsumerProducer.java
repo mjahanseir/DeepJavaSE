@@ -3,7 +3,7 @@ package Thread.Chapter32;
 import java.util.concurrent.*;
 import java.util.concurrent.locks.*;
 
-public class ConsumerProducer {
+public class Listing32_7_ConsumerProducer {
   private static Buffer buffer = new Buffer();
 
   public static void main(String[] args) {

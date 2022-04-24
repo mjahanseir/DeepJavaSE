@@ -1,9 +1,11 @@
 package Thread.ProducerConsumerIm;
 
+import javafx.stage.Stage;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class Application {
+public abstract class Application {
     public static void main(String[] args) {
 
         List<Integer> questionList= new ArrayList<Integer>();
@@ -15,4 +17,6 @@ public class Application {
         t2.start();
 
     }
+
+    public abstract void start(Stage stage);
 }

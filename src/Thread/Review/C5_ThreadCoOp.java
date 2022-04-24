@@ -33,7 +33,7 @@ public class C5_ThreadCoOp {
         private int balance=0;
         public int getBalance() {   return balance;  }
         public void withdraw(int amount){
-            //The withdraw task acquires the lock , waits for the newDeposit condition when there is not a sufficient amount to withdraw, and releases the lock.
+            //The withdrawal task acquires the lock , waits for the newDeposit condition when there is not a sufficient amount to withdraw, and releases the lock.
             lock.lock();
             try {
                 while (balance<amount){

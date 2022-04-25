@@ -10,7 +10,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import java.sql.*;
 
-public class FindGrade extends Application {
+public class Listing34_2_FindGrade extends Application {
   // Statement for executing queries
   private Statement stmt;
   private TextField tfSSN = new TextField();

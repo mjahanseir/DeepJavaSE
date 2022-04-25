@@ -15,7 +15,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
-public class StudentClient extends Application {
+public class Listing33_6_StudentClient extends Application {
   private TextField tfName = new TextField();
   private TextField tfStreet = new TextField();
   private TextField tfCity = new TextField();
@@ -80,8 +80,8 @@ public class StudentClient extends Application {
         String zip = tfZip.getText().trim();
 
         // Create a Student object and send to the server
-        StudentAddress s =
-          new StudentAddress(name, street, city, state, zip);
+        Listing33_5_StudentAddress s =
+          new Listing33_5_StudentAddress(name, street, city, state, zip);
         toServer.writeObject(s);
       }
       catch (IOException ex) {

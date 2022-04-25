@@ -13,7 +13,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
-public class Client extends Application {
+public class Listing33_2_Client extends Application {
   // IO streams
   DataOutputStream toServer = null;
   DataInputStream fromServer = null;

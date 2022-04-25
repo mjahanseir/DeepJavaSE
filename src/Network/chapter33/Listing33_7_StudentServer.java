@@ -3,15 +3,15 @@ package Network.chapter33;
 import java.io.*;
 import java.net.*;
 
-public class StudentServer {
+public class Listing33_7_StudentServer {
   private ObjectOutputStream outputToFile;
   private ObjectInputStream inputFromClient;
 
   public static void main(String[] args) {
-    new StudentServer();
+    new Listing33_7_StudentServer();
   }
 
-  public StudentServer() {
+  public Listing33_7_StudentServer() {
     try {
       // Create a server socket
       ServerSocket serverSocket = new ServerSocket(8001);

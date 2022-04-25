@@ -1,4 +1,4 @@
-package Thread;
+package Thread.ParallelProgramming;
 
 public class MergeSort {
   /** The method for sorting the numbers */

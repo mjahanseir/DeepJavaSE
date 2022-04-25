@@ -5,7 +5,8 @@ import java.sql.*;
 public class C8_DBtester_NonParameterized {
     public static void main(String[] args) {
         //1
-        try(Connection connection= DriverManager.getConnection("jdbc:mysql://localhost/sakila", "root", "Mo123456789")) {
+        try(Connection connection= DriverManager.getConnection(
+                "jdbc:mysql://localhost/sakila", "root", "Mo123456789")) {
             //2
             Statement statement = connection.createStatement();
             //3

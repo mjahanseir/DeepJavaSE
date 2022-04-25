@@ -21,6 +21,7 @@ public class Client extends Application{
     String fname;
     String lname;
     public void start(Stage mainStage) {
+        //region GUI
         BorderPane mainWindowLayout = new BorderPane();
         Label lblHeading = new Label("Film Database Search");
         lblHeading.setFont(new Font("Arial", 30));
@@ -54,6 +55,8 @@ public class Client extends Application{
         mainWindowLayout.setCenter(fieldsPane);
         mainWindowLayout.setBottom(fieldSubPane3);
         fieldSubPane3.setAlignment(Pos.CENTER);
+        //endregion
+
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle("Error");
         btnSearch.setOnAction(e->{

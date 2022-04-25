@@ -21,10 +21,12 @@ public class Server extends Application {
     Connection connection = null;
     @Override
     public void start(Stage stage) throws Exception {
+       //region GUI
         Scene scene = new Scene(new ScrollPane(ta), 450,200);
         stage.setTitle("Search Server");
         stage.setScene(scene);
         stage.show();
+        //endregion
         new Thread(() -> {
             try (
                 ServerSocket serverSocket = new ServerSocket(8001);

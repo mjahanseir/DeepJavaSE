@@ -2,7 +2,7 @@ package JDBC.chapter34;
 
 import java.sql.*;
 
-public class SimpleJdbc {
+public class Listing34_1_SimpleJdbc {
   public static void main(String[] args)
       throws SQLException, ClassNotFoundException {
     // Load the JDBC driver

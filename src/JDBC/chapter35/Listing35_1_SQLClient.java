@@ -18,7 +18,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-public class SQLClient extends Application {
+public class Listing35_1_SQLClient extends Application {
   // Connection to the database
   private Connection connection;
 
@@ -41,8 +41,7 @@ public class SQLClient extends Application {
   private Button btClearSQLCommand = new Button("Clear");
   private Button btConnectDB = new Button("Connect to Database");
   private Button btClearSQLResult = new Button("Clear Result");
-  private Label lblConnectionStatus 
-    = new Label("No connection now");
+  private Label lblConnectionStatus  = new Label("No connection now");
 
   @Override // Override the start method in the Application class
   public void start(Stage primaryStage) {
@@ -118,13 +117,12 @@ public class SQLClient extends Application {
     btExecuteSQL.setOnAction(e -> executeSQL()); 
     btClearSQLCommand.setOnAction(e -> tasqlCommand.setText(null));
     btClearSQLResult.setOnAction(e -> taSQLResult.setText(null));
-  }
+  }// END OF START
 
   /** Connect to DB */
   private void connectToDB() {
     // Get database information from the user input
-    String driver = cboDriver
-        .getSelectionModel().getSelectedItem();
+    String driver = cboDriver.getSelectionModel().getSelectedItem();
     String url = cboURL.getSelectionModel().getSelectedItem();
     String username = tfUsername.getText().trim();
     String password = pfPassword.getText().trim();
@@ -132,8 +130,7 @@ public class SQLClient extends Application {
     // Connection to the database
     try {
       Class.forName(driver);
-      connection = DriverManager.getConnection(
-        url, username, password);
+      connection = DriverManager.getConnection(  url, username, password);
       lblConnectionStatus.setText("Connected to " + url);
     }
     catch (Exception ex) {
@@ -213,13 +210,5 @@ public class SQLClient extends Application {
     catch (SQLException ex) {
       taSQLResult.setText(ex.toString());
     }
-  }
-
-  /**
-   * The main method is only needed for the IDE with limited
-   * JavaFX support. Not needed for running from the command line.
-   */
-  public static void main(String[] args) {
-    launch(args);
   }
 }

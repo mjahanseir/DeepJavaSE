@@ -20,7 +20,7 @@ public class FXClient extends Application {
 
     @Override // Override the start method in the Application class
     public void start(Stage stage) {
-        // Panel p to hold the label and text field
+        //region
         BorderPane paneForTextField = new BorderPane();
         paneForTextField.setPadding(new Insets(5, 5, 5, 5));
         paneForTextField.setStyle("-fx-border-color: green");
@@ -42,6 +42,7 @@ public class FXClient extends Application {
         stage.setScene(scene);
         stage.show();
 
+        //endregion
         ////////////////////////////////////////////////////////////////
 
         tf.setOnAction(e -> {
@@ -69,8 +70,6 @@ public class FXClient extends Application {
         try {
             // Create a socket to connect to the server
             Socket socket = new Socket("localhost", 8000);
-            // Socket socket = new Socket("130.254.204.36", 8000);
-            // Socket socket = new Socket("drake.Armstrong.edu", 8000);
 
             // Create an input stream to receive data from the server
             fromServer = new DataInputStream(socket.getInputStream());

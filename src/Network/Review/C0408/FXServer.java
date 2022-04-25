@@ -32,12 +32,7 @@ public class FXServer  extends Application {
                 // Create a server socket
                 ServerSocket serverSocket = new ServerSocket(8000);
                 /////////////////////////////////////////////////////////////////
-                /*
-                runLater. public static void runLater(Runnable runnable) Run the specified Runnable
-                on the JavaFX Application Thread at some unspecified time in the future.
-                This method,which may be called from any thread, will post the Runnable to an event
-                queue and then return immediately to the caller.
-                 */
+
                 Platform.runLater(() -> {
                     ta.appendText("Server started at " + new Date() + '\n');
                 });

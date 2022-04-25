@@ -20,7 +20,8 @@ public class Client {
             DataInputStream inFromServer = new DataInputStream( socket.getInputStream());
             DataOutputStream outToServer = new DataOutputStream(  socket.getOutputStream());
 
-            outToServer.writeUTF("Look like this worked!");
+            outToServer.writeUTF("Client said : " +
+                    "Look like this worked!");
 
             System.out.println(inFromServer.readUTF());
             System.out.println(inFromServer.readUTF());

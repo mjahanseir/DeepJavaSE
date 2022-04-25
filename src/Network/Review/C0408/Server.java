@@ -20,13 +20,13 @@ public class Server {
             DataInputStream inFromClient = new DataInputStream( socket.getInputStream());
             DataOutputStream outToClient = new DataOutputStream(  socket.getOutputStream());
 
-            outToClient.writeUTF("Thanks");
+            outToClient.writeUTF("Thanks from serverrr");
 
             String data= inFromClient.readUTF();
 
             System.out.println(data);
 
-            outToClient.writeUTF("Thanks");
+            outToClient.writeUTF("Thanks form server");
             outToClient.writeUTF(data);
 
         } catch (IOException e) {
